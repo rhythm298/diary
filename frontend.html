@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Diary</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+  <!-- PDF Export Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="dark-mode">
+  <div id="auth-container">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
+  </div>
+
+  <div id="diary-container" class="hidden">
+    <div class="toolbar">
+      <button onclick="toggleDarkMode()">🌓</button>
+      <input type="color" id="bgColor" onchange="changeBackground(this.value)">
+      <select id="fontSelector" onchange="changeFont(this.value)">
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier</option>
+      </select>
+      <button onclick="exportToPDF()">Export PDF</button>
+    </div>
+    <textarea id="diary-entry"></textarea>
+    <button onclick="saveEntry()">Save Entry</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
