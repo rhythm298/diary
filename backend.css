@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+}
+
+.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#diary-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  background: transparent;
+  color: inherit;
+}
